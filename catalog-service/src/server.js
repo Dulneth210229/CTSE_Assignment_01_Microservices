@@ -5,7 +5,7 @@ const swaggerDocs = require('./config/swagger');
 
 const PORT = process.env.PORT || 5002;
 
-// Connect to Database
+// Connect to DB
 connectDB().then(() => {
   app.listen(PORT, () => {
     console.log(`Catalog Service listening on port ${PORT}`);
