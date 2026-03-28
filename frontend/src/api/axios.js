@@ -1,10 +1,10 @@
 import axios from 'axios';
 
-// Get base URLs from Vite ENVs or fallback to localhost
-const USER_API = import.meta.env.VITE_USER_SERVICE_URL || 'http://localhost:5001/api/users';
-const CATALOG_API = import.meta.env.VITE_CATALOG_SERVICE_URL || 'http://localhost:5002/api/catalog';
-const WATCHLIST_API = import.meta.env.VITE_WATCHLIST_SERVICE_URL || 'http://localhost:5003/api/watchlist';
-const PLAYBACK_API = import.meta.env.VITE_PLAYBACK_SERVICE_URL || 'http://localhost:5004/api/playback';
+// Force the application to rely exactly on the .env variables provided
+const USER_API = import.meta.env.VITE_USER_SERVICE_URL;
+const CATALOG_API = import.meta.env.VITE_CATALOG_SERVICE_URL;
+const WATCHLIST_API = import.meta.env.VITE_WATCHLIST_SERVICE_URL;
+const PLAYBACK_API = import.meta.env.VITE_PLAYBACK_SERVICE_URL;
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('token');
