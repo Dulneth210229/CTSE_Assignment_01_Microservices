@@ -49,7 +49,7 @@ exports.getAllMovies = async (req, res) => {
     }
 
     // OMDb search only returns basic info (Title, Year, imdbID, Type, Poster).
-    // To get details like duration, genre, and description for cards, we'd need to fetch each by ID.
+    // To get details like duration, genre, and description for cards,  by ID.
     // For performance on the grid, we will just map what's available here. Detailed info fetches on `/movies/:id`.
     const movies = response.data.Search.map(movie => {
       const highRes = movie.Poster && movie.Poster !== 'N/A' ? movie.Poster.replace('SX300', 'SX1920') : '';
@@ -175,6 +175,7 @@ exports.getStreamInfo = async (req, res) => {
       }
     }
 
+    // If we can't find stream info, return not found
     return res.status(404).json({ message: 'Stream info not found' });
   } catch (error) {
     res.status(500).json({ message: 'API Error', error: error.message });
