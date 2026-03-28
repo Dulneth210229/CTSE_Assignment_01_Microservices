@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 // Force the application to rely exactly on the .env variables provided
-const USER_API = import.meta.env.VITE_USER_SERVICE_URL;
-const CATALOG_API = import.meta.env.VITE_CATALOG_SERVICE_URL;
-const WATCHLIST_API = import.meta.env.VITE_WATCHLIST_SERVICE_URL;
-const PLAYBACK_API = import.meta.env.VITE_PLAYBACK_SERVICE_URL;
+const USER_API = import.meta.env.VITE_USER_SERVICE_URL || 'https://streamlite-user-app-b8hdhtajg7b3heca.canadacentral-01.azurewebsites.net';
+const CATALOG_API = import.meta.env.VITE_CATALOG_SERVICE_URL || 'https://streamlite-catalog-app-awhqdgbyegbwcdf0.canadacentral-01.azurewebsites.net';
+const WATCHLIST_API = import.meta.env.VITE_WATCHLIST_SERVICE_URL || 'https://streamlite-watchlist-app-akhkc6g9btfefpef.canadacentral-01.azurewebsites.net';
+const PLAYBACK_API = import.meta.env.VITE_PLAYBACK_SERVICE_URL || 'https://streamlite-playback-app-hjc3ftcbg3bda7g4.canadacentral-01.azurewebsites.net';
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('token');
