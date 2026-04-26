@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
 // Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ message: 'Something went wrong!', error: err.message });
+  res.status(500).json({ code: 'INTERNAL_SERVER_ERROR', message: 'Something went wrong!', error: err.message });
 });
 
 module.exports = app;
