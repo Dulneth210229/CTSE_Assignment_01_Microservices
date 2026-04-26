@@ -27,7 +27,7 @@ const Navbar = () => {
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-black/90 backdrop-blur-sm shadow-md py-4' : 'bg-gradient-to-b from-black/80 to-transparent py-6'}`}>
       <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
         <div className="flex items-center space-x-8">
-          <Link to="/" className="text-netflix font-extrabold text-3xl tracking-wider">StreamLite</Link>
+          <Link to="/" className="text-netflix font-extrabold text-3xl tracking-wider">StreamLite-Test</Link>
           {user && (
             <div className="hidden md:flex space-x-6 text-sm font-medium text-gray-300">
               <Link to="/movies" className="hover:text-white transition-colors duration-200">Movies</Link>
